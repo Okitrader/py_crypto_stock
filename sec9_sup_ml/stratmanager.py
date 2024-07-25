@@ -12,7 +12,7 @@ class StrategyManager:
         # Download stock data from Yahoo Finance
         data = yf.download(symbol, start=start_date, end=end_date)
         
-        # Reset index and add DOW column using pandas
+        # Reset index and add DOW column using pandas Day of Week
         data_with_dow = data.reset_index()
         data_with_dow['DOW'] = data_with_dow['Date'].dt.dayofweek
         
